@@ -1,0 +1,266 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Roboto", sans-serif;
+    margin: 0px;
+    font-size: 1.2rem;
+    min-height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+header ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 0px;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+header li {
+    display: inline;
+    margin: 0px 30px 0px 0px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+    -webkit-transition: all 0.15s ease;
+            transition: all 0.15s ease;
+}
+
+a:hover {
+    color: red;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    margin: 20px 0px 0px 0px;
+    padding: 30px;
+}
+
+.wrapper {
+    padding: 10px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.product {
+    padding: 30px 40px 30px 40px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 4px;
+    cursor: pointer;
+    filter: drop-shadow(17px 19px 24px rgba(0,0,0,0.13));
+    background-color: white;
+    border-radius: 35px;
+    border: 2px solid transparent;
+    -webkit-transition: all 0.15s ease;
+            transition: all 0.15s ease;
+}
+
+.product:hover {
+    border-color: tomato;
+}
+
+.product:hover button {
+    background-color: rgb(250, 200, 200);
+}
+
+.product img {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.prod_name {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.weight {
+    color: gray;
+    margin-bottom: 0px;
+}
+
+.btn {
+    width: 100%;
+    font-family: "Roboto", "sans-serif";
+    font-size: 1.5rem;
+    background-color: #f1eee9;
+    border-radius: 10px;
+    border-color: transparent;
+    margin-top: 10px;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+}
+
+.curr_page {
+    color: rgb(240, 100, 100);
+    font-weight: bold;
+}
+
+.booking_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.booking_header {
+    text-align: center;
+    margin: 50px 0px 0px 0px;
+}
+
+.dishes_info .person_info {
+    display: flex;
+    flex-direction: column;
+}
+
+.small_header {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 20px 0px 0px 0px;
+}
+
+.dishes_info_select {
+    margin: 0px 0px 0px 30px ;
+}
+
+.person_info_sub {
+    margin: 10px 0px 0px 20px;
+}
+
+.dishes_select {
+    width: 90%; 
+    margin: 4px 20px 20px 0px;
+    height: 35px;
+    border-radius: 5px;
+    display: none;
+}
+
+.pers_input {
+    width: 90%; 
+    margin: 4px 20px 0px 0px;
+    height: 30px;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.description {
+    width: 88.5%;
+    height: 100px;
+    border-radius: 5px;
+    margin: 10px 0px 20px 0px;
+}
+
+.email_input {
+    margin-bottom: 0px;
+}
+
+.some_name {
+    margin: 0px;
+}
+
+.discount {
+    margin: 0px 0px 20px 20px;
+    font-size: 1rem;
+}
+
+.meta_info {
+    margin: 0px 0px 30px 20px;
+    font-size: 1rem;
+}
+
+fieldset {
+    border-style: none;
+    margin: 20px 0px 20px 20px;
+    padding: 0px;
+}
+
+.inline_el {
+    display: inline;
+}
+
+.set_det_time {
+    margin: 0px 0px 0px 20px;
+}
+
+.btn_wrapper {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    height: 40px;
+    width: 300px;
+}
+
+.end_btn {
+    flex-grow: 1;
+}
+
+.dish_not_chosen {
+    margin: 5px 0px 30px 0px;
+}
+
+.choice_label {
+    margin: 50px 0px 10px 0px;
+    font-weight: bold;
+}
+
+#nothing_chosen {
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+@media (width > 600px) and (width < 950px) {
+    nav ul {
+        justify-content: space-between;
+    }
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (width <= 600px) {
+    h1 {
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}
