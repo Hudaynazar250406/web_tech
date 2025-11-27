@@ -1,0 +1,708 @@
+/* Отступы для заголовков и категорий */
+main h2 { text-align: center; margin-top: 30px; color: #d84315; }
+.category { margin-top: 30px; }
+
+.combo-section {
+  margin-top: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid #e9ecef;
+}
+
+.combo-section h3 {
+  text-align: center;
+  color: #d84315;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.combo-subtitle {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.combo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.combo-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  border: 1px solid #f1f3f4;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.combo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  border-color: #ff7043;
+}
+
+.combo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.combo-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.combo-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.combo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.combo-item:hover {
+  background-color: #f8f9fa;
+  transform: translateX(5px);
+}
+
+.combo-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffab91 0%, #ff7043 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.combo-item:hover .combo-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.combo-icon i {
+  font-size: 1.3rem;
+  color: white;
+}
+
+.combo-item span {
+  font-weight: 500;
+  color: #495057;
+}
+
+.combo-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px dashed #dee2e6;
+  text-align: center;
+}
+
+.combo-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #d84315;
+  background: #fff3e0;
+  padding: 8px 15px;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.dessert-info {
+  background: #e8f5e9;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-left: 4px solid #4caf50;
+}
+
+.dessert-info i {
+  font-size: 1.5rem;
+  color: #4caf50;
+}
+
+.dessert-info p {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Стили для фильтров */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: #f1eee9;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+  background: #e0dbd6;
+}
+
+.filter-btn.active {
+  background: tomato;
+  color: white;
+  border-color: tomato;
+}
+
+/* Сетка блока со всеми блюдами (требование: grid 3 колонки, 1fr, gap 10px) */
+.dishes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Блок каждого блюда — flex колонка (чтобы выровнять кнопки по нижней границе) */
+.dish {
+  display: flex;
+  flex-direction: column; /* вертикальное направление */
+  align-items: stretch;
+  background: #fff;
+  padding: 30px 40px; /* внутренние отступы сверху/снизу 30px, слева/справа 40px */
+  border-radius: 35px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  border: 2px solid transparent;
+  border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+/* Поведение при hover: рамка tomato и изменение цвета кнопки через контекстный селектор */
+.dish:hover {
+  border-color: tomato;
+  transform: translateY(-4px);
+}
+.dish:hover .add-btn {
+  background: tomato;
+  color: white;
+}
+
+/* Изображение растягивается на всю ширину и радиус 35px */
+.dish img {
+  width: 100%;
+  height: 200px;       /* фиксируем высоту */
+  object-fit: cover;   /* подрезаем по контейнеру */
+  border-radius: 35px;
+  display: block;
+}
+
+/* Цена и название — увеличенные размеры */
+.dish .price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 4px 0;
+}
+.dish .name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 4px 0 12px 0; /* Увеличиваем нижний отступ вместо weight */
+}
+
+/* Вес/объем */
+.dish .weight {
+  display: none;
+}
+
+/* Кнопка 'Добавить' */
+.add-btn {
+  background: #f1eee9;
+  padding: 10px 30px; /* 10px сверху/снизу, 30px справа/слева */
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: start;
+  transition: background 0.15s ease, color 0.15s ease;
+  margin-top: auto; /* ключевой момент: толкает кнопку вниз, выравнивая её для всех карточек */
+}
+
+.add-btn.selected {
+  background: tomato;
+  color: white;
+}
+
+/* Наведение на кнопку */
+.add-btn:hover { background: #e0dbd6; }
+.add-btn.selected:hover { background: #bf360c; }
+
+/* === Блок "Сделать заказ" === */
+.order {
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08), 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.order h2 {
+  text-align: center;
+  color: #d84315;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.order-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.order-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  border-color: tomato;
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.4);
+}
+
+.order-form textarea {
+  resize: vertical;
+}
+
+.order-form .checkbox {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-form .delivery-options {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.order-form #time {
+  max-width: 150px;
+}
+
+.order-form .add-btn {
+  grid-column: span 2;
+  align-self: center;
+  justify-self: center;
+  margin-top: 20px;
+  padding: 12px 36px;
+  font-size: 1rem;
+}
+
+/* === Стили для уведомлений === */
+.notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.notification-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.notification h3 {
+  color: #d84315;
+  margin-bottom: 15px;
+}
+
+.notification p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.notification-ok {
+  background: #d84315;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.notification-ok:hover {
+  background: #bf360c;
+  transform: translateY(-2px);
+}
+
+/* === Стили для sticky панели заказа === */
+.order-panel {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 15px 0;
+  box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+  border-top: 2px solid #d84315;
+  z-index: 1000;
+  display: none;
+}
+
+.order-panel-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.order-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.order-total, .order-items {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.checkout-link {
+  background: #d84315;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.checkout-link:hover {
+  background: #bf360c;
+  transform: translateY(-2px);
+}
+
+.checkout-link.disabled {
+  background: #ccc;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* === Стили для страницы оформления заказа === */
+.order-summary-section {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+.order-summary-section h2 {
+  color: #d84315;
+  margin-bottom: 20px;
+}
+
+.checkout-dish {
+  margin-bottom: 15px;
+}
+
+.remove-btn {
+  background: #ff4757;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+  margin-top: auto;
+}
+
+.remove-btn:hover {
+  background: #ff3742;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.empty-message a {
+  color: #d84315;
+  text-decoration: none;
+}
+
+.empty-message a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для формы оформления заказа */
+.order-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.order-items-list {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.order-items-list h3 {
+  color: #d84315;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d84315;
+  padding-bottom: 10px;
+}
+
+.order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.order-item-row:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.item-name.not-selected {
+  color: #6c757d;
+  font-style: italic;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #d84315;
+}
+
+.order-total-display {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #d84315;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+.contact-info {
+  background: #e8f5e9;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid #4caf50;
+}
+
+.contact-info h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.phone-number {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin: 0;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* === Адаптивность === */
+@media (max-width: 700px) {
+  .order-form {
+    grid-template-columns: 1fr;
+  }
+
+  .order-form .checkbox,
+  .order-form .add-btn {
+    grid-column: span 1;
+  }
+  
+  .combo-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .dessert-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .combo-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Адаптивность: ≤800 — 2 колонки, ≤600 — 1 колонка */
+@media (max-width: 800px) {
+  .dishes { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .dishes { grid-template-columns: 1fr; }
+  .dish { padding: 24px 20px; }
+  .filters { justify-content: center; }
+  
+  .combo-section {
+    padding: 20px 15px;
+  }
+  
+  .combo-card {
+    padding: 20px;
+  }
+  
+  .order-details {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .order-panel-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .order-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Немного уменьшить отступы на очень маленьких экранах */
+@media (max-width: 400px) {
+  .dish { padding: 16px; border-radius: 20px; }
+  .dish img { border-radius: 20px; }
+  .add-btn { padding: 8px 18px; }
+  .filter-btn { padding: 6px 12px; font-size: 0.8rem; }
+  
+  .combo-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .checkout-dish {
+    padding: 15px;
+  }
+  
+  .order-items-list {
+    padding: 15px;
+  }
+}
+
+/* === Ваш заказ — упорядочивание пунктов === */
+#order-summary {
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* отступ между блюдами */
+}
+
+#order-summary p,
+#order-summary div {
+  margin: 0;
+}
+
+/* Каждый пункт заказа */
+#order-summary .order-item {
+  display: flex;
+  justify-content: space-between; /* название слева, цена справа */
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  font-weight: 600;
+}
+
+/* Последний пункт без линии */
+#order-summary .order-item:last-child {
+  border-bottom: none;
+}
+
+/* Итоговая сумма */
+#order-total {
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #d84315;
+  margin-top: 8px;
+}
+

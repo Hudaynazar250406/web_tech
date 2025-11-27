@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Construct - Собрать ланч</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="logo">Food Construct</h1>
+        <nav>
+            <a href="#">О нас</a>
+            <a href="#" class="active">Собрать ланч</a>
+            <a href="#">Заказы</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="combos-section">
+            <h2>Доступные для заказа комбо</h2>
+            <div class="combos-grid">
+                <!-- Комбо 1 -->
+                <div class="combo-item">
+                    <div class="dish-block">
+                        <img src="menu/soups/mushroom_soup.jpg" alt="Суп" class="dish-img">
+                        <span class="dish-label">Суп</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/main_course/lasagna.jpg" alt="Главное блюдо" class="dish-img">
+                        <span class="dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/starters/caprese.jpg" alt="Салат" class="dish-img">
+                        <span class="dish-label">Салат</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/drinks/cappuccino.jpg" alt="Напиток" class="dish-img">
+                        <span class="dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Комбо 2 -->
+                <div class="combo-item">
+                    <div class="dish-block">
+                        <img src="menu/soups/norwegian_soup.jpg" alt="Суп" class="dish-img">
+                        <span class="dish-label">Суп</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/main_course/pizza.jpg" alt="Главное блюдо" class="dish-img">
+                        <span class="dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/drinks/orangejuice.jpg" alt="Напиток" class="dish-img">
+                        <span class="dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Комбо 3 -->
+                <div class="combo-item">
+                    <div class="dish-block">
+                        <img src="menu/soups/gazpacho.jpg" alt="Суп" class="dish-img">
+                        <span class="dish-label">Суп</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/starters/saladwithegg.jpg" alt="Салат" class="dish-img">
+                        <span class="dish-label">Салат</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/drinks/greentea.jpg" alt="Напиток" class="dish-img">
+                        <span class="dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Комбо 4 -->
+                <div class="combo-item">
+                    <div class="dish-block">
+                        <img src="menu/main_course/shrimppasta.jpg" alt="Главное блюдо" class="dish-img">
+                        <span class="dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/starters/tunasalad.jpg" alt="Салат" class="dish-img">
+                        <span class="dish-label">Салат</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/drinks/carrotjuice.jpg" alt="Напиток" class="dish-img">
+                        <span class="dish-label">Напиток</span>
+                    </div>
+                </div>
+
+                <!-- Комбо 5 -->
+                <div class="combo-item">
+                    <div class="dish-block">
+                        <img src="menu/main_course/chickencutletsandmashedpotatoes.jpg" alt="Главное блюдо" class="dish-img">
+                        <span class="dish-label">Главное блюдо</span>
+                    </div>
+                    <div class="dish-block">
+                        <img src="menu/drinks/applejuice.jpg" alt="Напиток" class="dish-img">
+                        <span class="dish-label">Напиток</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dessert-section">
+                <div class="dish-block">
+                    <img src="menu/desserts/baklava.jpg" alt="Десерт" class="dish-img">
+                    <span class="dish-label">Десерт</span>
+                    <span class="dish-note">(Можно добавить к любому заказу)</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="order-section">
+            <h2>Выберите суп</h2>
+            <div class="dishes-grid">
+                <div class="dish-card" data-type="soup" data-name="mushroom">
+                    <img src="menu/soups/mushroom_soup.jpg" alt="Грибной суп">
+                    <p>Грибной суп</p>
+                </div>
+                <div class="dish-card" data-type="soup" data-name="norwegian">
+                    <img src="menu/soups/norwegian_soup.jpg" alt="Норвежский суп">
+                    <p>Норвежский суп</p>
+                </div>
+                <div class="dish-card" data-type="soup" data-name="tomyum">
+                    <img src="menu/soups/tomyum.jpg" alt="Том Ям">
+                    <p>Том Ям</p>
+                </div>
+                <div class="dish-card" data-type="soup" data-name="gazpacho">
+                    <img src="menu/soups/gazpacho.jpg" alt="Газпачо">
+                    <p>Газпачо</p>
+                </div>
+                <div class="dish-card" data-type="soup" data-name="ramen">
+                    <img src="menu/soups/ramen.jpg" alt="Рамен">
+                    <p>Рамен</p>
+                </div>
+            </div>
+
+            <h2>Выберите главное блюдо</h2>
+            <div class="dishes-grid">
+                <div class="dish-card" data-type="main" data-name="lasagna">
+                    <img src="menu/main_course/lasagna.jpg" alt="Лазанья">
+                    <p>Лазанья</p>
+                </div>
+                <div class="dish-card" data-type="main" data-name="fishrice">
+                    <img src="menu/main_course/fishrice.jpg" alt="Курица с рисом">
+                    <p>Курица с рисом</p>
+                </div>
+                <div class="dish-card" data-type="main" data-name="shrimppasta">
+                    <img src="menu/main_course/shrimppasta.jpg" alt="Паста с креветками">
+                    <p>Паста с креветками</p>
+                </div>
+                <div class="dish-card" data-type="main" data-name="friedpotatoes">
+                    <img src="menu/main_course/friedpotatoeswithmushrooms1.jpg" alt="Картофель фри с грибами">
+                    <p>Картофель фри с грибами</p>
+                </div>
+                <div class="dish-card" data-type="main" data-name="chickencutlets">
+                    <img src="menu/main_course/chickencutletsandmashedpotatoes.jpg" alt="Куриные котлеты">
+                    <p>Куриные котлеты с пюре</p>
+                </div>
+                <div class="dish-card" data-type="main" data-name="pizza">
+                    <img src="menu/main_course/pizza.jpg" alt="Пицца">
+                    <p>Пицца</p>
+                </div>
+            </div>
+
+            <h2>Выберите салат/стартер</h2>
+            <div class="dishes-grid">
+                <div class="dish-card" data-type="salad" data-name="withegg">
+                    <img src="menu/starters/saladwithegg.jpg" alt="Салат с яйцом">
+                    <p>Салат с яйцом</p>
+                </div>
+                <div class="dish-card" data-type="salad" data-name="tuna">
+                    <img src="menu/starters/tunasalad.jpg" alt="Салат с тунцом">
+                    <p>Салат с тунцом</p>
+                </div>
+                <div class="dish-card" data-type="salad" data-name="caprese">
+                    <img src="menu/starters/caprese.jpg" alt="Капрезе">
+                    <p>Капрезе</p>
+                </div>
+                <div class="dish-card" data-type="salad" data-name="friedpotatoes">
+                    <img src="menu/starters/frenchfries1.jpg" alt="Картофель фри">
+                    <p>Картофель фри</p>
+                </div>
+                <div class="dish-card" data-type="salad" data-name="caesar">
+                    <img src="menu/starters/caesar.jpg" alt="Цезарь">
+                    <p>Цезарь</p>
+                </div>
+            </div>
+
+            <h2>Выберите напиток</h2>
+            <div class="dishes-grid">
+                <div class="dish-card" data-type="drink" data-name="tea">
+                    <img src="menu/drinks/tea.jpg" alt="Чай">
+                    <p>Чай</p>
+                </div>
+                <div class="dish-card" data-type="drink" data-name="greentea">
+                    <img src="menu/drinks/greentea.jpg" alt="Зелёный чай">
+                    <p>Зелёный чай</p>
+                </div>
+                <div class="dish-card" data-type="drink" data-name="applejuice">
+                    <img src="menu/drinks/applejuice.jpg" alt="Яблочный сок">
+                    <p>Яблочный сок</p>
+                </div>
+                <div class="dish-card" data-type="drink" data-name="orangejuice">
+                    <img src="menu/drinks/orangejuice.jpg" alt="Апельсиновый сок">
+                    <p>Апельсиновый сок</p>
+                </div>
+                <div class="dish-card" data-type="drink" data-name="carrotjuice">
+                    <img src="menu/drinks/carrotjuice.jpg" alt="Морковный сок">
+                    <p>Морковный сок</p>
+                </div>
+                <div class="dish-card" data-type="drink" data-name="cappuccino">
+                    <img src="menu/drinks/cappuccino.jpg" alt="Капучино">
+                    <p>Капучино</p>
+                </div>
+            </div>
+
+            <h2>Десерт</h2>
+            <div class="dishes-grid">
+                <div class="dish-card" data-type="dessert" data-name="cheesecake">
+                    <img src="menu/desserts/cheesecake.jpg" alt="Чизкейк">
+                    <p>Чизкейк</p>
+                </div>
+                <div class="dish-card" data-type="dessert" data-name="chocheesecake">
+                    <img src="menu/desserts/chocolatecheesecake.jpg" alt="Шоколадный чизкейк">
+                    <p>Шоколадный чизкейк</p>
+                </div>
+                <div class="dish-card" data-type="dessert" data-name="donuts">
+                    <img src="menu/desserts/donuts_3.jpg" alt="Пончики">
+                    <p>Пончики</p>
+                </div>
+                <div class="dish-card" data-type="dessert" data-name="choccake">
+                    <img src="menu/desserts/chocolatecake.jpg" alt="Шоколадный торт">
+                    <p>Шоколадный торт</p>
+                </div>
+                <div class="dish-card" data-type="dessert" data-name="baklava">
+                    <img src="menu/desserts/baklava.jpg" alt="Баклава">
+                    <p>Баклава</p>
+                </div>
+                <div class="dish-card" data-type="dessert" data-name="donuts2">
+                    <img src="menu/desserts/donuts_6.jpg" alt="Пончики (набор 2)">
+                    <p>Пончики (набор 2)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Ничего не выбрано</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="comments">Комментарии к заказу</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="subscribe" name="subscribe" checked>
+                    <label for="subscribe">Получать информацию о скидках и акциях</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery-time">Время доставки</label>
+                    <input type="time" id="delivery-time" name="delivery-time">
+                    <span class="note">только по Москве</span>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" id="asap" name="asap">
+                    <label for="asap">К указанному времени</label>
+                </div>
+
+                <button type="submit" class="submit-btn">Оформить заказ</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

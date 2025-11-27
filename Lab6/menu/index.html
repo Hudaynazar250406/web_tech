@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Food Construct</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Собрать ланч</h1>
+        <nav>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#" class="active">Собрать ланч</a></li>
+                <li><a href="#">Заказы</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Доступные для заказа комбо</h2>
+
+        <!-- Секция Супы -->
+        <section class="menu-section">
+            <h3>Супы</h3>
+            <div class="wrapper" id="soups"></div>
+        </section>
+
+        <!-- Секция Главные блюда -->
+        <section class="menu-section">
+            <h3>Главные блюда</h3>
+            <div class="wrapper" id="main-courses"></div>
+        </section>
+
+        <!-- Секция Салаты -->
+        <section class="menu-section">
+            <h3>Салаты</h3>
+            <div class="wrapper" id="salads"></div>
+        </section>
+
+        <!-- Секция Стартеры -->
+        <section class="menu-section">
+            <h3>Стартеры</h3>
+            <div class="wrapper" id="starters"></div>
+        </section>
+
+        <!-- Секция Напитки -->
+        <section class="menu-section">
+            <h3>Напитки</h3>
+            <div class="wrapper" id="drinks"></div>
+        </section>
+
+        <!-- Секция Десерты -->
+        <section class="menu-section">
+            <h3>Десерты</h3>
+            <p class="dessert-note">Можно добавлять к любому виду ланча</p>
+            <div class="wrapper" id="desserts"></div>
+        </section>
+
+        <!-- Форма заказа -->
+        <section class="order-section">
+            <h2>Ваш заказ</h2>
+
+            <div class="order-display">
+                <div class="order-item" id="order-soup">
+                    <p class="order-label">Суп не выбран</p>
+                </div>
+                <div class="order-item" id="order-main">
+                    <p class="order-label">Главное блюдо не выбрано</p>
+                </div>
+                <div class="order-item" id="order-salad">
+                    <p class="order-label">Салат не выбран</p>
+                </div>
+                <div class="order-item" id="order-starter">
+                    <p class="order-label">Стартер не выбран</p>
+                </div>
+                <div class="order-item" id="order-drink">
+                    <p class="order-label">Напиток не выбран</p>
+                </div>
+                <div class="order-item" id="order-dessert">
+                    <p class="order-label">Десерт не выбран</p>
+                </div>
+            </div>
+
+            <div class="total-price">
+                <p>Стоимость заказа: <span id="total-sum">0</span> ₽</p>
+            </div>
+
+            <form id="order-form">
+                <h3>Ваши данные</h3>
+
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Номер телефона</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Адрес доставки</label>
+                    <input type="text" id="address" name="address" required>
+                    <small>Доставка осуществляется только по Москве</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="delivery-time">Укажите время доставки</label>
+                    <input type="time" id="delivery-time" name="delivery-time" min="07:00" max="23:00">
+                    <small>Доступно время доставки с 7:00 до 23:00</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments">Комментарий к заказу</label>
+                    <textarea id="comments" name="comments" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn">Оформить заказ</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Food Construct. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="storage.js"></script>
+    <script src="prepare_cards.js"></script>
+    <script src="filter_by_kind.js"></script>
+    <script src="form_script.js"></script>
+    <script src="combo_validation.js"></script>
+</body>
+
+</html>

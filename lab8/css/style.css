@@ -1,0 +1,294 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background-color: #fafafa;
+  color: #333;
+
+  /* чтобы футер "приклеивался" к низу при коротком контенте */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Делает основной контент растущим элементом */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex: 1 0 auto; /* позволяет main занимать доступную высоту */
+}
+
+/* === Шапка === */
+header {
+  background: #d84315;
+  color: white;
+  padding: 15px 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+}
+header h1 { margin: 0; font-size: 1.5rem; }
+
+/* nav: теперь flexbox */
+nav {
+  justify-self: center;
+  display: flex;
+  gap: 15px; /* требование: отступ для флексов 15px */
+  align-items: center;
+  flex-wrap: wrap; /* разрешаем перенос на новые строки */
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 4px;
+}
+nav a:hover { color: tomato; text-decoration: underline; }
+
+/* активная ссылка */
+nav a.active {
+  color: tomato;
+}
+
+/* кнопка входа */
+.login-btn {
+  background: #ff7043;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login-btn:hover { background: #bf360c; }
+
+@media (max-width: 640px) {
+  header { display: flex; justify-content: space-between; }
+  nav { gap: 12px; font-size: 0.95rem; }
+}
+
+/* === Hero === */
+.hero { text-align: center; padding: 50px 20px; color: #333; }
+.hero-img { margin-top: 20px; width: 45%; border-radius: 12px; }
+
+h3 { margin-top: 40px; color: #d84315; }
+
+/* === Таблица === */
+.table-wrap { overflow: auto; } /* на случай длинных таблиц */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  table-layout: fixed; /* позволяет ячейкам переноситься */
+}
+th, td { border: 1px solid #ddd; padding: 12px; text-align: center; word-break: break-word; }
+th { background: #ff7043; color: white; }
+tr:nth-child(even) { background: #f9f9f9; }
+
+/* === Форма обратной связи === */
+.feedback-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.feedback-form label, .feedback-form fieldset {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+.feedback-form input[type="text"],
+.feedback-form input[type="email"],
+.feedback-form select,
+.feedback-form textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.feedback-form button {
+  background: #d84315;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.feedback-form button:hover { background: #bf360c; }
+.feedback-form .consent { flex-direction: row; gap: 10px; font-weight: normal; }
+
+/* === Модальное окно === */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.55);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  position: relative;
+  padding: 22px;
+  animation: fadeIn 0.22s ease;
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #666;
+}
+.close:hover { color: #d84315; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Форма входа === */
+.auth-form {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.auth-form h2 { text-align: center; margin-bottom: 10px; color: #d84315; }
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.auth-form button {
+  background: #d84315;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.auth-form button:hover { background: #bf360c; }
+.auth-form .remember { flex-direction: row; align-items: center; gap: 10px; font-weight: normal; }
+
+/* === Футер === */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  flex-shrink: 0; /* чтобы футер не сжимался */
+}
+footer a { color: #ff7043; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Медиазапрос для таблицы: чтобы на ≤400 таблица не требовала горизонтальной прокрутки */
+@media (max-width: 400px) {
+  table, th, td { font-size: 13px; padding: 8px; }
+  .hero-img { width: 80%; } /* подгоняем */
+}
+
+
+/* Стили для кнопки API ключа */
+.login-btn {
+  background: #ff7043;
+  border: none;
+  padding: 8px 14px;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #bf360c;
+  transform: translateY(-1px);
+}
+
+/* Стили для модального окна API ключа */
+.api-key-form .form-group {
+  margin-bottom: 20px;
+}
+
+.api-key-form .submit-btn {
+  background: #d84315;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.api-key-form .submit-btn:hover {
+  background: #bf360c;
+  transform: translateY(-1px);
+}
+
+/* Стили для поля API ключа с переключателем видимости */
+.api-key-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#api-key-input {
+  width: 100%;
+  padding-right: 50px; /* Место для кнопки */
+  font-family: 'Courier New', monospace; /* Для лучшего отображения UUID */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.toggle-password:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.toggle-password:active {
+  transform: scale(0.95);
+}
+
+/* Стили для скрытого текста */
+.api-key-masked {
+  letter-spacing: 2px;
+  font-weight: 600;
+}

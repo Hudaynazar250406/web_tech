@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Собрать ланч - Клуб доставки "Велосипед"</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="landing.html">Лендинг</a></li>
+                    <li><a href="lunch.html" class="active">Собрать ланч</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#" id="personal-cabinet-link">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Индикатор загрузки -->
+        <div id="loading-indicator" class="loading-indicator container">
+            <div class="loading-spinner"></div>
+            <p>Загружаем меню...</p>
+        </div>
+
+        <!-- Блок с доступными комбо -->
+        <section class="available-combos container" style="display: none;">
+            <h2>Доступные для заказа комбо</h2>
+            <div class="combos-grid">
+                <!-- Комбо 1 -->
+                <div class="combo">
+                    <div class="combo-dish">
+                        <img src="https://cdn.dodostatic.net/static/Img/Products/0198bf4e67f474f991f04a46a49af5e6_1875x1875.jpeg" alt="Пицца">
+                        <span>Пицца</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://imgproxy.kuper.ru/imgproxy/size-680-680/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzQ3ODc0MTI2L29yaWdpbmFsLzEvMjAyNS0wOC0xOVQxMiUzQTA2JTNBMDQuMDAzMjkwJTJCMDAlM0EwMC80Nzg3NDEyNl8xLnBuZw==" alt="Бургер">
+                        <span>Бургер</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://menunedeli.ru/wp-content/uploads/2022/07/41322293-5B97-451F-886E-2522AB91F67B-1200x948.jpeg" alt="Салат">
+                        <span>Салат</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://i.1.creatium.io/ab/58/41/47d001dbc58556f60f80a53760d69e15c4/pimstea.jpg" alt="Напиток">
+                        <span>Напиток</span>
+                    </div>
+                </div>
+                
+                <!-- Комбо 2 -->
+                <div class="combo">
+                    <div class="combo-dish">
+                        <img src="https://cdn.dodostatic.net/static/Img/Products/0198bf4e67f474f991f04a46a49af5e6_1875x1875.jpeg" alt="Пицца">
+                        <span>Пицца</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://imgproxy.kuper.ru/imgproxy/size-680-680/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzQ3ODc0MTI2L29yaWdpbmFsLzEvMjAyNS0wOC0xOVQxMiUzQTA2JTNBMDQuMDAzMjkwJTJCMDAlM0EwMC80Nzg3NDEyNl8xLnBuZw==" alt="Бургер">
+                        <span>Бургер</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://i.1.creatium.io/ab/58/41/47d001dbc58556f60f80a53760d69e15c4/pimstea.jpg" alt="Напиток">
+                        <span>Напиток</span>
+                    </div>
+                </div>
+                
+                <!-- Комбо 3 -->
+                <div class="combo">
+                    <div class="combo-dish">
+                        <img src="https://cdn.dodostatic.net/static/Img/Products/0198bf4e67f474f991f04a46a49af5e6_1875x1875.jpeg" alt="Пицца">
+                        <span>Пицца</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://menunedeli.ru/wp-content/uploads/2022/07/41322293-5B97-451F-886E-2522AB91F67B-1200x948.jpeg" alt="Салат">
+                        <span>Салат</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://i.1.creatium.io/ab/58/41/47d001dbc58556f60f80a53760d69e15c4/pimstea.jpg" alt="Напиток">
+                        <span>Напиток</span>
+                    </div>
+                </div>
+                
+                <!-- Комбо 4 -->
+                <div class="combo">
+                    <div class="combo-dish">
+                        <img src="https://imgproxy.kuper.ru/imgproxy/size-680-680/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzQ3ODc0MTI2L29yaWdpbmFsLzEvMjAyNS0wOC0xOVQxMiUzQTA2JTNBMDQuMDAzMjkwJTJCMDAlM0EwMC80Nzg3NDEyNl8xLnBuZw==" alt="Бургер">
+                        <span>Бургер</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://menunedeli.ru/wp-content/uploads/2022/07/41322293-5B97-451F-886E-2522AB91F67B-1200x948.jpeg" alt="Салат">
+                        <span>Салат</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://i.1.creatium.io/ab/58/41/47d001dbc58556f60f80a53760d69e15c4/pimstea.jpg" alt="Напиток">
+                        <span>Напиток</span>
+                    </div>
+                </div>
+                
+                <!-- Комбо 5 -->
+                <div class="combo">
+                    <div class="combo-dish">
+                        <img src="https://imgproxy.kuper.ru/imgproxy/size-680-680/czM6Ly9jb250ZW50LWltYWdlcy1wcm9kL3Byb2R1Y3RzLzQ3ODc0MTI2L29yaWdpbmFsLzEvMjAyNS0wOC0xOVQxMiUzQTA2JTNBMDQuMDAzMjkwJTJCMDAlM0EwMC80Nzg3NDEyNl8xLnBuZw==" alt="Бургер">
+                        <span>Бургер</span>
+                    </div>
+                    <div class="combo-dish">
+                        <img src="https://i.1.creatium.io/ab/58/41/47d001dbc58556f60f80a53760d69e15c4/pimstea.jpg" alt="Напиток">
+                        <span>Напиток</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dessert-note">
+                Десерты можно добавлять в любой вид ланча.
+            </div>
+        </section>
+
+        <!-- Секции блюд (изначально скрыты) -->
+        <section class="burgers" style="display: none;"></section>
+        <section class="pizzas" style="display: none;"></section>
+        <section class="starters" style="display: none;"></section>
+        <section class="drinks" style="display: none;"></section>
+        <section class="desserts" style="display: none;"></section>
+
+        <!-- Форма заказа (изначально скрыта) -->
+        <section class="order-form container" style="display: none;">
+            <h2>Сделать заказ</h2>
+            
+            <div class="order-content">
+                <div class="order-summary">
+                    <h3>Ваш заказ</h3>
+                    <div class="order-items" id="order-items">
+                        <div class="no-selection">Ничего не выбрано</div>
+                    </div>
+                    
+                    <div class="order-total" style="display: none;">
+                        <p>Стоимость заказа: <span id="total-price">0</span> руб.</p>
+                    </div>
+                    
+                    <div class="order-comments">
+                        <label for="comments">Комментарии к заказу</label>
+                        <textarea id="comments" name="comments" placeholder="Ваши пожелания к заказу..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="customer-data">
+                    <h3>Ваши данные</h3>
+                    <form class="order-data-form" method="POST" action="https://httpbin.org/post" id="order-form">
+                        <input type="hidden" name="selected_burger" id="selected-burger">
+                        <input type="hidden" name="selected_pizza" id="selected-pizza">
+                        <input type="hidden" name="selected_starter" id="selected-starter">
+                        <input type="hidden" name="selected_drink" id="selected-drink">
+                        <input type="hidden" name="selected_dessert" id="selected-dessert">
+                        
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" name="newsletter">
+                                Получать информацию о акциях и новостях
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Номер телефона</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Адрес доставки</label>
+                            <input type="text" id="address" name="address" required>
+                            <p class="note">Доставка осуществляется только по Москве</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Время доставки</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="delivery-time" value="asap" required checked> Как можно скорее</label>
+                                <label><input type="radio" name="delivery-time" value="specific"> К указанному времени</label>
+                            </div>
+                            <input type="time" id="delivery-time-specific" name="delivery-time-specific" style="display: none;">
+                            <p class="note">Доступное время доставки с 10:00 до 23:00</p>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="button" class="btn reset-btn" id="reset-order">Сбросить заказ</button>
+                            <button type="submit" class="btn order-btn">Отправить заказ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <p>Позвонить нам: <a href="tel:+77777777777">+7-777-777-77-77</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>О нас</h3>
+                <p>Клуб доставки "Велосипед" - это сервис доставки еды. Работает с 2025 года.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контактная информация</h3>
+                <p>Телефон: +7 (777) 777-77-77</p>
+                <p>Электронная почта: info@deliverycluybvelosiped.ru</p>
+                <p>Адрес: г. Москва, ул. Павла Корчагина, д. 22</p>
+            </div>
+            <div class="footer-section">
+                <h3>Часы работы</h3>
+                <p>Пн-Чт: 8:00 - 00:00</p>
+                <p>Пт-Сб: 7:00 - 00:00</p>
+                <p>Вс: 10:00 - 22:00</p>
+            </div>
+        </div>
+        <div class="copyright container">
+            <p>&copy; 2025 Клуб доставки "Велосипед". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход в личный кабинет</h2>
+            <form class="auth-form" method="POST" action="https://httpbin.org/post">
+                <div class="form-group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="remember">
+                        Запомнить меня
+                    </label>
+                </div>
+                
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Блок уведомления -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <p id="notification-message"></p>
+            <button id="notification-ok" class="notification-btn">Окей</button>
+        </div>
+    </div>
+
+    <script src="dishes.js"></script>
+    <script src="displayDishes.js"></script>
+    <script src="orderLogic.js"></script>
+    <script src="comboValidation.js"></script>
+    
+    <script>
+        // Функция для показа основных блоков после загрузки
+        function showMainContent() {
+            document.getElementById('loading-indicator').style.display = 'none';
+            document.querySelector('.available-combos').style.display = 'block';
+            document.querySelector('.order-form').style.display = 'block';
+            
+            const sections = ['burgers', 'pizzas', 'starters', 'drinks', 'desserts'];
+            sections.forEach(section => {
+                const element = document.querySelector(`.${section}`);
+                if (element) element.style.display = 'block';
+            });
+        }
+
+        // Основная функция инициализации
+        async function initializeApp() {
+            try {
+                console.log('Начинаем загрузку блюд...');
+                await loadDishes();
+                console.log('Блюда загружены, отображаем...');
+                
+                displayDishes();
+                initializeOrderLogic();
+                showMainContent();
+                
+                console.log('Приложение успешно инициализировано');
+            } catch (error) {
+                console.error('Ошибка инициализации приложения:', error);
+                document.getElementById('loading-indicator').innerHTML = `
+                    <div class="loading-error">
+                        <p>Не удалось загрузить меню. Пожалуйста, обновите страницу.</p>
+                        <button onclick="location.reload()" class="notification-btn">Обновить</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Инициализация при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+            
+            // Остальной код для модального окна и времени доставки
+            const modal = document.getElementById("auth-modal");
+            const link = document.getElementById("personal-cabinet-link");
+            const span = document.getElementsByClassName("close")[0];
+            
+            if (link && modal && span) {
+                link.onclick = function(event) {
+                    event.preventDefault();
+                    modal.style.display = "block";
+                }
+                
+                span.onclick = function() {
+                    modal.style.display = "none";
+                }
+                
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+            
+            const timeRadios = document.querySelectorAll('input[name="delivery-time"]');
+            const timeInput = document.getElementById('delivery-time-specific');
+            
+            if (timeRadios.length > 0 && timeInput) {
+                timeRadios.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        if (this.value === 'specific') {
+                            timeInput.style.display = 'block';
+                            timeInput.required = true;
+                        } else {
+                            timeInput.style.display = 'none';
+                            timeInput.required = false;
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

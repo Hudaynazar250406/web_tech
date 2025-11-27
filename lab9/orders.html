@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunchPro — История заказов</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/orders.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <header>
+    <h1>LunchPro</h1>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="lunch.html">Собрать ланч</a>
+      <a href="checkout.html">Оформить заказ</a>
+      <a href="orders.html" class="active">Заказы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <button id="api-key-btn" class="login-btn">API Ключ</button>
+  </header>
+
+  <main class="orders-main">
+    <h2>История заказов</h2>
+    
+    <div id="orders-container" class="orders-container">
+      <!-- Список заказов будет загружаться динамически -->
+      <div id="loading-message" class="loading-message">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Загрузка истории заказов...</p>
+      </div>
+      
+      <div id="empty-message" class="empty-message" style="display: none;">
+        <i class="fas fa-shopping-bag"></i>
+        <h3>Заказов пока нет</h3>
+        <p>У вас еще нет оформленных заказов.</p>
+        <a href="lunch.html" class="cta-button">
+          <i class="fas fa-utensils"></i>
+          Собрать ланч
+        </a>
+      </div>
+      
+      <table id="orders-table" class="orders-table" style="display: none;">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Дата оформления</th>
+            <th>Состав заказа</th>
+            <th>Стоимость</th>
+            <th>Время доставки</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody id="orders-tbody">
+          <!-- Заказы будут добавляться сюда -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Модальное окно просмотра заказа -->
+  <div id="view-order-modal" class="modal" aria-hidden="true">
+    <div class="modal-content large">
+      <span class="close" data-modal="view-order-modal">&times;</span>
+      <h2>Просмотр заказа</h2>
+      <div id="view-order-content">
+        <!-- Содержимое будет заполнено динамически -->
+      </div>
+      <div class="modal-actions">
+        <button class="btn-ok" data-modal="view-order-modal">Ок</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно редактирования заказа -->
+  <div id="edit-order-modal" class="modal" aria-hidden="true">
+    <div class="modal-content large">
+      <span class="close" data-modal="edit-order-modal">&times;</span>
+      <h2>Редактирование заказа</h2>
+      <form id="edit-order-form">
+        <div id="edit-order-content">
+          <!-- Форма редактирования будет заполнена динамически -->
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-save">Сохранить</button>
+          <button type="button" class="btn-cancel" data-modal="edit-order-modal">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модальное окно подтверждения удаления -->
+  <div id="delete-order-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" data-modal="delete-order-modal">&times;</span>
+      <h2>Удаление заказа</h2>
+      <p>Вы уверены, что хотите удалить заказ?</p>
+      <div class="modal-actions">
+        <button class="btn-confirm" id="confirm-delete">Да</button>
+        <button class="btn-cancel" data-modal="delete-order-modal">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно API ключа -->
+  <div id="api-key-modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span id="close-api-modal" class="close" role="button" aria-label="закрыть">&times;</span>
+      <div class="api-key-form">
+        <h2>Настройка API ключа</h2>
+        <div class="api-key-info">
+          <div class="info-card">
+            <h3><i class="fas fa-key"></i> Как получить API ключ</h3>
+            <ol>
+              <li>Перейдите по ссылке: <a href="https://edu.std-900.ist.mospolytech.ru/get_api_key" target="_blank" class="api-link">Получить API ключ</a></li>
+              <li>Скопируйте ваш уникальный ключ (формат: 123e4567-e89b-12d3-a456-426655440000)</li>
+              <li>Вставьте ключ в поле ниже и нажмите "Сохранить"</li>
+            </ol>
+            <div class="warning">
+              <i class="fas fa-exclamation-triangle"></i>
+              <strong>Важно:</strong> Никому не сообщайте ваш ключ!
+            </div>
+          </div>
+        </div>
+        
+        <form id="api-key-form">
+          <div class="form-group">
+            <label for="api-key-input">Ваш API ключ:</label>
+            <input type="text" id="api-key-input" name="api_key" required placeholder="Введите ваш API ключ (формат UUID)">
+          </div>
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-save"></i>
+            Сохранить ключ
+          </button>
+        </form>
+        
+        <div id="api-status" class="api-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contacts">
+    <p>Телефон: +7 (123) 456-78-90 | Email: info@lunchpro.ru</p>
+    <p>© 2025 LunchPro — Доставка бизнес-ланчей</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/orders.js"></script>
+
+  <script>
+    // Управление модальным окном API ключа
+    const apiModal = document.getElementById('api-key-modal');
+    const apiKeyBtn = document.getElementById('api-key-btn');
+    const closeApiModal = document.getElementById('close-api-modal');
+    const apiKeyForm = document.getElementById('api-key-form');
+    const apiKeyInput = document.getElementById('api-key-input');
+    const apiStatus = document.getElementById('api-status');
+
+    function openApiModal() {
+      apiModal.style.display = 'flex';
+      apiModal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      
+      const savedKey = localStorage.getItem('lunchProApiKey');
+      if (savedKey) {
+        apiKeyInput.value = savedKey;
+      }
+    }
+
+    function closeApiModalFunc() {
+      apiModal.style.display = 'none';
+      apiModal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    function showApiStatus(message, isSuccess) {
+      apiStatus.style.display = 'block';
+      apiStatus.textContent = message;
+      apiStatus.className = `api-status ${isSuccess ? 'success' : 'error'}`;
+    }
+
+    apiKeyForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const key = apiKeyInput.value.trim();
+      
+      if (!key) {
+        showApiStatus('Пожалуйста, введите API ключ', false);
+        return;
+      }
+
+      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      if (!uuidRegex.test(key)) {
+        showApiStatus('Неверный формат ключа. Ключ должен быть в формате UUID.', false);
+        return;
+      }
+
+      try {
+        setApiKey(key);
+        await loadDishes();
+        showApiStatus('Ключ успешно сохранен и проверен!', true);
+        
+        setTimeout(() => {
+          closeApiModalFunc();
+          window.location.reload();
+        }, 2000);
+      } catch (error) {
+        showApiStatus('Ошибка: ' + error.message, false);
+      }
+    });
+
+    apiKeyBtn.addEventListener('click', openApiModal);
+    closeApiModal.addEventListener('click', closeApiModalFunc);
+    
+    window.addEventListener('click', e => { 
+      if (e.target === apiModal) closeApiModalFunc(); 
+    });
+    
+    window.addEventListener('keydown', e => { 
+      if (e.key === 'Escape' && apiModal.style.display === 'flex') closeApiModalFunc(); 
+    });
+
+    // Проверяем наличие API ключа при загрузке
+    document.addEventListener('DOMContentLoaded', async function() {
+      const savedKey = localStorage.getItem('lunchProApiKey');
+      if (!savedKey) {
+        setTimeout(openApiModal, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

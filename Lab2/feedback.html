@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обратная связь - Туркменская Чайхана</title>
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <h1>Обратная связь</h1>
+    <form id="feedbackForm" action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <label for="fio">ФИО:</label>
+        <input type="text" id="fio" name="fio" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <div class="radio-group">
+            <label>Откуда узнали о нас:</label>
+            <input type="radio" id="ad" name="source" value="Реклама" required>
+            <label for="ad">Реклама</label>
+            <input type="radio" id="friends" name="source" value="От друзей">
+            <label for="friends">От друзей</label>
+            <input type="radio" id="search" name="source" value="Поиск в интернете">
+            <label for="search">Поиск в интернете</label>
+            <input type="radio" id="other" name="source" value="Другое">
+            <label for="other">Другое</label>
+        </div>
+
+        <label for="type">Тип обращения:</label>
+        <select id="type" name="type" required>
+            <option value="">Выберите тип</option>
+            <option value="жалоба">Жалоба</option>
+            <option value="предложение">Предложение</option>
+        </select>
+
+        <label for="message">Текст сообщения:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <label for="attachment">Вложения:</label>
+        <input type="file" id="attachment" name="attachment">
+
+        <div class="checkbox-group">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Даю согласие на обработку персональных данных</label>
+        </div>
+
+        <button type="submit">Отправить</button>
+    </form>
+    <div id="successMessage" class="success-message" style="display: none;">Успешно отправлено</div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+
+            try {
+                const response = await fetch('https://httpbin.org/post', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (response.ok) {
+                    document.getElementById('feedbackForm').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+            }
+        });
+    </script>
+</body>
+</html>

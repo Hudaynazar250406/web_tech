@@ -1,0 +1,22 @@
+/* Общие печатные стили */
+@media print {
+  /* фоновые цвета обычно не печатаем */
+  * { background: transparent !important; color: #000 !important; box-shadow: none !important; }
+
+  /* Убираем интерактивные элементы */
+  nav, .login-btn, .add-btn, input, textarea, select, .modal, .close, button { display: none !important; }
+
+  /* Оставляем контент — h1, заголовки, тексты, таблицы */
+  header { border-bottom: 1px solid #000; padding-bottom: 6px; margin-bottom: 10px; }
+  main { margin: 0; padding: 0; }
+
+  /* Таблицы — печатаемые */
+  table { border: 1px solid #000; width: 100%; border-collapse: collapse; }
+  th, td { border: 1px solid #000; padding: 6px; font-size: 12px; }
+
+  /* Картинки печатаем, но уменьшаем размер */
+  img { max-width: 120px; height: auto; }
+
+  /* Проще шрифт и интервалы */
+  body { font-size: 12pt; line-height: 1.2; }
+}

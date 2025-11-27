@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunchPro — Собрать ланч</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lunch.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <header>
+  <h1>LunchPro</h1>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="lunch.html" class="active">Собрать ланч</a>
+    <a href="checkout.html">Оформить заказ</a>
+    <a href="#">О нас</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
+  <button id="api-key-btn" class="login-btn">API Ключ</button>
+  </header>
+
+  <main>
+    <!-- Блок с комбо-предложениями -->
+    <section class="combo-section">
+      <h3>Доступные для заказа комбо</h3>
+      <p class="combo-subtitle">Соберите свой ланч</p>
+      
+      <div class="combo-container">
+        <!-- Комбо 1 -->
+        <div class="combo-card">
+          <div class="combo-header">
+            <h4>Полный ланч</h4>
+          </div>
+          <div class="combo-content">
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-utensil-spoon"></i>
+              </div>
+              <span>Суп</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-drumstick-bite"></i>
+              </div>
+              <span>Главное блюдо</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-carrot"></i>
+              </div>
+              <span>Салат</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <span>Напиток</span>
+            </div>
+          </div>
+          <div class="combo-footer">
+            <span class="combo-price">~ 650 ₽</span>
+          </div>
+        </div>
+        
+        <!-- Комбо 2 -->
+        <div class="combo-card">
+          <div class="combo-header">
+            <h4>Классический</h4>
+          </div>
+          <div class="combo-content">
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-utensil-spoon"></i>
+              </div>
+              <span>Суп</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-drumstick-bite"></i>
+              </div>
+              <span>Главное блюдо</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <span>Напиток</span>
+            </div>
+          </div>
+          <div class="combo-footer">
+            <span class="combo-price">~ 550 ₽</span>
+          </div>
+        </div>
+        
+        <!-- Комбо 3 -->
+        <div class="combo-card">
+          <div class="combo-header">
+            <h4>Легкий</h4>
+          </div>
+          <div class="combo-content">
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-utensil-spoon"></i>
+              </div>
+              <span>Суп</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-carrot"></i>
+              </div>
+              <span>Салат</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <span>Напиток</span>
+            </div>
+          </div>
+          <div class="combo-footer">
+            <span class="combo-price">~ 500 ₽</span>
+          </div>
+        </div>
+        
+        <!-- Комbo 4 -->
+        <div class="combo-card">
+          <div class="combo-header">
+            <h4>Без первого</h4>
+          </div>
+          <div class="combo-content">
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-drumstick-bite"></i>
+              </div>
+              <span>Главное блюдо</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-carrot"></i>
+              </div>
+              <span>Салат</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <span>Напиток</span>
+            </div>
+          </div>
+          <div class="combo-footer">
+            <span class="combo-price">~ 600 ₽</span>
+          </div>
+        </div>
+        
+        <!-- Комбо 5 -->
+        <div class="combo-card">
+          <div class="combo-header">
+            <h4>Базовый</h4>
+          </div>
+          <div class="combo-content">
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-drumstick-bite"></i>
+              </div>
+              <span>Главное блюдо</span>
+            </div>
+            <div class="combo-item">
+              <div class="combo-icon">
+                <i class="fas fa-coffee"></i>
+              </div>
+              <span>Напиток</span>
+            </div>
+          </div>
+          <div class="combo-footer">
+            <span class="combo-price">~ 450 ₽</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dessert-info">
+        <i class="fas fa-ice-cream"></i>
+        <p>Десерты можно добавлять в любой вид ланча за дополнительную плату.</p>
+      </div>
+    </section>
+
+    <!-- Супы -->
+    <section class="category" aria-labelledby="soups-title">
+      <h3 id="soups-title">Супы</h3>
+      <div class="filters" id="soup-filters">
+        <button class="filter-btn" data-kind="fish">рыбный</button>
+        <button class="filter-btn" data-kind="meat">мясной</button>
+        <button class="filter-btn" data-kind="veg">вегетарианский</button>
+      </div>
+      <div class="dishes" id="soups" role="list"></div>
+    </section>
+
+    <!-- Главные блюда -->
+    <section class="category" aria-labelledby="mains-title">
+      <h3 id="mains-title">Главные блюда</h3>
+      <div class="filters" id="main-filters">
+        <button class="filter-btn" data-kind="fish">рыбное</button>
+        <button class="filter-btn" data-kind="meat">мясное</button>
+        <button class="filter-btn" data-kind="veg">вегетарианское</button>
+      </div>
+      <div class="dishes" id="mains" role="list"></div>
+    </section>
+
+    <!-- Салаты и стартеры -->
+    <section class="category" aria-labelledby="starters-title">
+      <h3 id="starters-title">Салаты и стартеры</h3>
+      <div class="filters" id="starter-filters">
+        <button class="filter-btn" data-kind="fish">рыбный</button>
+        <button class="filter-btn" data-kind="meat">мясной</button>
+        <button class="filter-btn" data-kind="veg">вегетарианский</button>
+      </div>
+      <div class="dishes" id="starters" role="list"></div>
+    </section>
+
+    <!-- Напитки -->
+    <section class="category" aria-labelledby="drinks-title">
+      <h3 id="drinks-title">Напитки</h3>
+      <div class="filters" id="drink-filters">
+        <button class="filter-btn" data-kind="cold">холодный</button>
+        <button class="filter-btn" data-kind="hot">горячий</button>
+      </div>
+      <div class="dishes" id="drinks" role="list"></div>
+    </section>
+
+    <!-- Десерты -->
+    <section class="category" aria-labelledby="desserts-title">
+      <h3 id="desserts-title">Десерты</h3>
+      <div class="filters" id="dessert-filters">
+        <button class="filter-btn" data-kind="small">маленькая порция</button>
+        <button class="filter-btn" data-kind="medium">средняя порция</button>
+        <button class="filter-btn" data-kind="large">большая порция</button>
+      </div>
+      <div class="dishes" id="desserts" role="list"></div>
+    </section>
+  </main>
+
+  <!-- Sticky панель заказа -->
+  <div id="order-panel" class="order-panel">
+    <div class="order-panel-content">
+      <div class="order-info">
+        <span class="order-total">Сумма: <strong id="panel-total">0</strong> ₽</span>
+        <span class="order-items">Блюд: <strong id="panel-count">0</strong></span>
+      </div>
+      <a href="checkout.html" id="checkout-link" class="checkout-link disabled">Перейти к оформлению</a>
+    </div>
+  </div>
+
+  <footer id="contacts">
+    <p>Телефон: +7 (123) 456-78-90 | Email: info@lunchpro.ru</p>
+    <p>© 2025 LunchPro — Доставка бизнес-ланчей</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/storage.js"></script>
+
+  <script>
+    // Модалка "Вход"
+    const openBtn = document.getElementById('login-btn');
+    if (openBtn) {
+      openBtn.addEventListener('click', () => {
+        alert('Форма входа в демо отключена на странице "Собрать ланч".');
+      });
+    }
+  </script>
+  <div id="api-key-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span id="close-api-modal" class="close" role="button" aria-label="закрыть">&times;</span>
+    <div class="api-key-form">
+      <h2>Настройка API ключа</h2>
+      <div class="api-key-info">
+        <div class="info-card">
+          <h3><i class="fas fa-key"></i> Как получить API ключ</h3>
+          <ol>
+            <li>Перейдите по ссылке: <a href="https://edu.std-900.ist.mospolytech.ru/get_api_key" target="_blank" class="api-link">Получить API ключ</a></li>
+            <li>Скопируйте ваш уникальный ключ (формат: 123e4567-e89b-12d3-a456-426655440000)</li>
+            <li>Вставьте ключ в поле ниже и нажмите "Сохранить"</li>
+          </ol>
+          <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>Важно:</strong> Никому не сообщайте ваш ключ!
+          </div>
+        </div>
+      </div>
+      
+      <form id="api-key-form">
+        <div class="form-group">
+          <label for="api-key-input">Ваш API ключ:</label>
+          <input type="text" id="api-key-input" name="api_key" required placeholder="Введите ваш API ключ (формат UUID)">
+        </div>
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-save"></i>
+          Сохранить ключ
+        </button>
+      </form>
+      
+      <div id="api-status" class="api-status"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Добавление скрипта управления API ключом -->
+<script>
+  // Управление модальным окном API ключа
+  const apiModal = document.getElementById('api-key-modal');
+  const apiKeyBtn = document.getElementById('api-key-btn');
+  const closeApiModal = document.getElementById('close-api-modal');
+  const apiKeyForm = document.getElementById('api-key-form');
+  const apiKeyInput = document.getElementById('api-key-input');
+  const apiStatus = document.getElementById('api-status');
+
+  function openApiModal() {
+    apiModal.style.display = 'flex';
+    apiModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    
+    const savedKey = localStorage.getItem('lunchProApiKey');
+    if (savedKey) {
+      apiKeyInput.value = savedKey;
+    }
+  }
+
+  function closeApiModalFunc() {
+    apiModal.style.display = 'none';
+    apiModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  function showApiStatus(message, isSuccess) {
+    apiStatus.style.display = 'block';
+    apiStatus.textContent = message;
+    apiStatus.className = `api-status ${isSuccess ? 'success' : 'error'}`;
+  }
+
+  apiKeyForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const key = apiKeyInput.value.trim();
+    
+    if (!key) {
+      showApiStatus('Пожалуйста, введите API ключ', false);
+      return;
+    }
+
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!uuidRegex.test(key)) {
+      showApiStatus('Неверный формат ключа. Ключ должен быть в формате UUID.', false);
+      return;
+    }
+
+    try {
+      setApiKey(key);
+      await loadDishes();
+      showApiStatus('Ключ успешно сохранен и проверен!', true);
+      
+      setTimeout(() => {
+        closeApiModalFunc();
+        window.location.reload();
+      }, 2000);
+    } catch (error) {
+      showApiStatus('Ошибка: ' + error.message, false);
+    }
+  });
+
+  apiKeyBtn.addEventListener('click', openApiModal);
+  closeApiModal.addEventListener('click', closeApiModalFunc);
+  
+  window.addEventListener('click', e => { 
+    if (e.target === apiModal) closeApiModalFunc(); 
+  });
+  
+  window.addEventListener('keydown', e => { 
+    if (e.key === 'Escape' && apiModal.style.display === 'flex') closeApiModalFunc(); 
+  });
+
+  // Проверяем наличие API ключа при загрузке
+  document.addEventListener('DOMContentLoaded', async function() {
+    const savedKey = localStorage.getItem('lunchProApiKey');
+    if (!savedKey) {
+      setTimeout(openApiModal, 1000);
+    }
+  });
+  </script>
+</body>
+</html>

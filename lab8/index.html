@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LunchPro — Доставка бизнес-ланчей</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+  <header>
+    <h1>LunchPro</h1>
+    <nav>
+      <a href="index.html" class="active">Главная</a>
+      <a href="lunch.html">Собрать ланч</a>
+      <a href="checkout.html">Оформить заказ</a>
+      <a href="#">О нас</a>
+      <a href="#feedback">Контакты</a>
+    </nav>
+    <button id="api-key-btn" class="login-btn">API Ключ</button>
+  </header>
+
+  <section class="hero">
+    <h2>Вкусные бизнес-ланчи с доставкой в офис</h2>
+    <p>Свежие продукты, разнообразное меню и быстрая доставка</p>
+    <img src="img/lunch_stock.jpeg" alt="Бизнес-ланч" class="hero-img">
+  </section>
+
+  <main>
+    <h3>Меню на неделю</h3>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>День</th><th>Суп</th><th>Основное блюдо</th><th>Напиток</th><th>Цена</th>
+        </tr>
+        <tr><td>Понедельник</td><td>Борщ</td><td>Котлета с пюре</td><td>Компот</td><td>350 ₽</td></tr>
+        <tr><td>Вторник</td><td>Суп-пюре из брокколи</td><td>Курица с рисом</td><td>Чай</td><td>340 ₽</td></tr>
+        <tr><td>Среда</td><td>Щи</td><td>Паста Болоньезе</td><td>Морс</td><td>360 ₽</td></tr>
+        <tr><td>Четверг</td><td>Солянка</td><td>Рыба с овощами</td><td>Сок</td><td>370 ₽</td></tr>
+        <tr><td>Пятница</td><td>Тыквенный суп</td><td>Стейк из индейки</td><td>Компот</td><td>380 ₽</td></tr>
+      </table>
+    </div>
+
+    <h3>О компании</h3>
+    <p><strong>LunchPro</strong> уже более 5 лет занимается доставкой бизнес-ланчей в офисы Москвы. 
+      Мы предлагаем свежие и вкусные блюда по доступным ценам. Наша цель — сэкономить ваше время и сделать обед приятным.</p>
+
+    <section id="feedback">
+      <h3>Обратная связь</h3>
+      <form action="https://httpbin.org/post" method="POST" enctype="multipart/form-data" class="feedback-form">
+        <label>ФИО:
+          <input type="text" name="fio" required>
+        </label>
+        <label>Email:
+          <input type="email" name="email" required>
+        </label>
+        <fieldset>
+          <legend>Откуда узнали о нас:</legend>
+          <label><input type="radio" name="source" value="друзья" required> Друзья</label>
+          <label><input type="radio" name="source" value="реклама"> Реклама</label>
+          <label><input type="radio" name="source" value="интернет"> Интернет</label>
+        </fieldset>
+        <label>Тип обращения:
+          <select name="type">
+            <option value="жалоба">Жалоба</option>
+            <option value="предложение">Предложение</option>
+          </select>
+        </label>
+        <label>Текст сообщения:
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <label>Вложения:
+          <input type="file" name="file">
+        </label>
+        <label class="consent">
+          <input type="checkbox" name="consent" required> Даю согласие на обработку персональных данных
+        </label>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Изменения в модальном окне API ключа -->
+<div id="api-key-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span id="close-api-modal" class="close" role="button" aria-label="закрыть">&times;</span>
+    <div class="api-key-form">
+      <h2>Настройка API ключа</h2>
+      <div class="api-key-info">
+        <div class="info-card">
+          <h3><i class="fas fa-key"></i> Как получить API ключ</h3>
+          <ol>
+            <li>Перейдите по ссылке: <a href="https://edu.std-900.ist.mospolytech.ru/get_api_key" target="_blank" class="api-link">Получить API ключ</a></li>
+            <li>Скопируйте ваш уникальный ключ (формат: 123e4567-e89b-12d3-a456-426655440000)</li>
+            <li>Вставьте ключ в поле ниже и нажмите "Сохранить"</li>
+          </ol>
+          <div class="warning">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>Важно:</strong> Никому не сообщайте ваш ключ!
+          </div>
+        </div>
+      </div>
+      
+      <form id="api-key-form">
+        <div class="form-group">
+          <label for="api-key-input">Ваш API ключ:</label>
+          <input type="text" id="api-key-input" name="api_key" required placeholder="Введите ваш API ключ (формат UUID)">
+        </div>
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-save"></i>
+          Сохранить ключ
+        </button>
+      </form>
+      
+      <div id="api-status" class="api-status"></div>
+    </div>
+  </div>
+</div>
+
+  <footer>
+    <p>Телефон: +7 (123) 456-78-90 | Email: info@lunchpro.ru</p>
+    <p>© 2025 LunchPro — Доставка бизнес-ланчей</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="js/api.js"></script>
+  <script>
+    // Управление модальным окном API ключа
+    const apiModal = document.getElementById('api-key-modal');
+    const apiKeyBtn = document.getElementById('api-key-btn');
+    const closeApiModal = document.getElementById('close-api-modal');
+    const apiKeyForm = document.getElementById('api-key-form');
+    const apiKeyInput = document.getElementById('api-key-input');
+    const apiStatus = document.getElementById('api-status');
+
+    function openApiModal() {
+      apiModal.style.display = 'flex';
+      apiModal.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+      
+      // Загружаем сохраненный ключ если есть
+      const savedKey = localStorage.getItem('lunchProApiKey');
+      if (savedKey) {
+        apiKeyInput.value = savedKey;
+      }
+    }
+
+    function closeApiModalFunc() {
+      apiModal.style.display = 'none';
+      apiModal.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    function showApiStatus(message, isSuccess) {
+      apiStatus.style.display = 'block';
+      apiStatus.textContent = message;
+      apiStatus.className = `api-status ${isSuccess ? 'success' : 'error'}`;
+    }
+
+    // Сохранение API ключа
+    apiKeyForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const key = apiKeyInput.value.trim();
+      
+      if (!key) {
+        showApiStatus('Пожалуйста, введите API ключ', false);
+        return;
+      }
+
+      // Проверяем формат UUID
+      const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+      if (!uuidRegex.test(key)) {
+        showApiStatus('Неверный формат ключа. Ключ должен быть в формате UUID.', false);
+        return;
+      }
+
+      try {
+        setApiKey(key);
+        // Пробуем загрузить блюда для проверки ключа
+        await loadDishes();
+        showApiStatus('Ключ успешно сохранен и проверен!', true);
+        
+        setTimeout(() => {
+          closeApiModalFunc();
+        }, 2000);
+      } catch (error) {
+        showApiStatus('Ошибка: ' + error.message, false);
+      }
+    });
+
+    apiKeyBtn.addEventListener('click', openApiModal);
+    closeApiModal.addEventListener('click', closeApiModalFunc);
+    
+    window.addEventListener('click', e => { 
+      if (e.target === apiModal) closeApiModalFunc(); 
+    });
+    
+    window.addEventListener('keydown', e => { 
+      if (e.key === 'Escape' && apiModal.style.display === 'flex') closeApiModalFunc(); 
+    });
+
+    // Проверяем наличие API ключа при загрузке
+    document.addEventListener('DOMContentLoaded', async function() {
+      const savedKey = localStorage.getItem('lunchProApiKey');
+      if (!savedKey) {
+        // Если ключа нет, показываем модальное окно через 1 секунду
+        setTimeout(openApiModal, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформить заказ - Доставка еды</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>🍔 Доставка еды</h1>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Меню</a></li>
+                        <li><a href="lunch.html">Ланч</a></li>
+                        <li><a href="checkout.html" class="active">Оформить заказ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="checkout-page">
+                <h2>Оформление заказа</h2>
+
+                <div class="order-form">
+                    <div class="order-content">
+                        <!-- Левая колонка: Ваш заказ -->
+                        <div class="order-summary">
+                            <h3>Ваш заказ</h3>
+                            <div class="order-items" id="checkout-order-items">
+                                <div class="no-selection">Ничего не выбрано</div>
+                            </div>
+                            <div class="order-total" id="checkout-total">
+                                Стоимость заказа: 0 руб.
+                            </div>
+                        </div>
+
+                        <!-- Правая колонка: Форма заказа -->
+                        <div class="customer-data">
+                            <h3>Ваши данные</h3>
+                            <form id="order-form" class="order-data-form">
+                                <!-- Личные данные -->
+                                <div class="form-group">
+                                    <label for="name">Ваше имя *</label>
+                                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Электронная почта *</label>
+                                    <input type="email" id="email" name="email" required placeholder="example@mail.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Телефон *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+7-777-777-77-77">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address">Адрес доставки *</label>
+                                    <input type="text" id="address" name="address" required placeholder="Ул. Примерная, д. 1">
+                                </div>
+
+                                <!-- Время доставки -->
+                                <div class="form-group">
+                                    <label for="delivery-time">Время доставки *</label>
+                                    <input type="time" id="delivery-time" name="delivery-time" required>
+                                    <p class="note">Доставка осуществляется с 12:00 до 23:00</p>
+                                </div>
+
+                                <!-- Способ оплаты -->
+                                <div class="form-group">
+                                    <label>Способ оплаты *</label>
+                                    <div class="radio-group">
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="payment" 
+                                                value="cash" 
+                                                checked
+                                            >
+                                            Наличные
+                                        </label>
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="payment" 
+                                                value="card"
+                                            >
+                                            Карта
+                                        </label>
+                                        <label>
+                                            <input 
+                                                type="radio" 
+                                                name="payment" 
+                                                value="online"
+                                            >
+                                            Онлайн платеж
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Комментарии -->
+                                <div class="order-comments">
+                                    <label for="comments">Комментарии к заказу</label>
+                                    <textarea id="comments" name="comments" placeholder="Укажите пожелания к доставке или приготовлению..."></textarea>
+                                </div>
+
+                                <!-- Кнопки -->
+                                <div class="form-submit">
+                                    <button type="reset" class="reset-btn">Очистить</button>
+                                    <button type="submit" class="order-btn">Оформить заказ</button>
+                                </div>
+                            </form>
+
+                            <div class="contact-info">
+                                <p>Позвонить нам: <a href="tel:+77777777777">+7-777-777-77-77</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Уведомление -->
+        <div class="notification" id="notification">
+            <div class="notification-content">
+                <p id="notification-message"></p>
+                <button class="notification-btn" id="notification-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Лучшая доставка еды в городе</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <a href="tel:+77777777777">+7-777-777-77-77</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Доставка еды. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="dishes.js"></script>
+    <script src="displayDishes.js"></script>
+    <script src="comboValidation.js"></script>
+    <script src="orderLogic.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>

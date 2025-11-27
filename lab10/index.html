@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб доставки "Велосипед"</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="landing.html">Лендинг</a></li>
+                    <li><a href="lunch.html">Собрать ланч</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#" id="personal-cabinet-link">Личный кабинет</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Еда сама бежит к вам домой!</h1>
+            <p>Более 10 вкуснейших блюд на выбор. Быстрая доставка за 60 минут!</p>
+            <a href="lunch.html" class="btn">Заказать сейчас</a>
+        </section>
+
+        <section class="foodlist container">
+            <div class="section-title">
+                <h2>Популярные блюда</h2>
+                <p>Топ-5 любимых блюд наших клиентов</p>
+            </div>
+
+            <table class="foodtable">
+                <thead>
+                    <tr>
+                        <th>Блюдо</th>
+                        <th>Состав</th>
+                        <th>Вес</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Биг Чикен бургер Чатни</td>
+                        <td>Бекон жареный, булочка для гамбургеров, куриное филе в панировке, салат 
+                            крупной нарезки, соус чатни, плавленный сыр, тертый сыр</td>
+                        <td>309 г</td>
+                        <td>339 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Супермясной додстер</td>
+                        <td>Пшеничная лепешка, цыпленок, чоризо, пряная говядина, 
+                            моцарелла, соус бургер
+                        </td>
+                        <td>160 г</td>
+                        <td>299 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Пицца "Жюльен 30 см"</td>
+                        <td>Тесто, цыпленок, шампиньоны, ароматный грибной соус, лук,
+                            сухой чеснок, моцарелла, соус альфредо, сыры чеддер и пармезан
+                        </td>
+                        <td>630 г</td>
+                        <td>929 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Салат "Цезарь"</td>
+                        <td>Салат крупной нарезки, сыр тертый, томаты Черри, куриные стрипсы</td>
+                        <td>156 г</td>
+                        <td>277 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>Чикен Премьер</td>
+                        <td>Плавленный сыр Чеддер, помидор свежий резанный, кетчуп томатный, булочка для гамбургеров, 
+                            соус традиционный, салат мелкой нарезки, бекон жареный, масло растительное, котлета куриная
+                        </td>
+                        <td>234 г</td>
+                        <td>203 руб.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="feedback container">
+            <div class="section-title">
+                <h2>Обратная связь</h2>
+                <p>Мы ценим ваше мнение и всегда готовы стать лучше!</p>
+            </div>
+            
+            <form class="feedback-form" method="POST" action="https://httpbin.org/post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Откуда узнали о нас?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="source" value="search" required> Поисковик (Google, Yandex)</label>
+                        <label><input type="radio" name="source" value="social"> Социальные сети</label>
+                        <label><input type="radio" name="source" value="friends"> Рекомендация друзей</label>
+                        <label><input type="radio" name="source" value="ad"> Наружная реклама</label>
+                        <label><input type="radio" name="source" value="other"> Другое</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="type">Тип обращения:</label>
+                    <select id="type" name="type" required>
+                        <option value="">-- Выберите тип --</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Текст сообщения:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attachment">Вложения (если необходимо):</label>
+                    <input type="file" id="attachment" name="attachment">
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="agree" required>
+                        Даю согласие на обработку персональных данных
+                    </label>
+                </div>
+                
+                <div class="form-submit">
+                    <button type="submit">Отправить сообщение</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>О нас</h3>
+                <p>Клуб доставки "Велосипед" - это сервис доставки еды. Работает с 2025 года.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контактная информация</h3>
+                <p>Телефон: +7 (777) 777-77-77</p>
+                <p>Электронная почта: info@deliverycluybvelosiped.ru</p>
+                <p>Адрес: г. Москва, ул. Павла Корчагина, д. 22</p>
+            </div>
+            <div class="footer-section">
+                <h3>Часы работы</h3>
+                <p>Пн-Чт: 8:00 - 00:00</p>
+                <p>Пт-Сб: 7:00 - 00:00</p>
+                <p>Вс: 10:00 - 22:00</p>
+            </div>
+        </div>
+        <div class="copyright container">
+            <p>&copy; 2025 Клуб доставки "Велосипед". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход в личный кабинет</h2>
+            <form class="auth-form" method="POST" action="https://httpbin.org/post">
+                <div class="form-group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="remember">
+                        Запомнить меня
+                    </label>
+                </div>
+                
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("auth-modal");
+        
+        const link = document.getElementById("personal-cabinet-link");
+        
+        const span = document.getElementsByClassName("close")[0];
+        
+        link.onclick = function(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        }
+        
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

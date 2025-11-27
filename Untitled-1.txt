@@ -1,0 +1,10 @@
+<script src="storage.js"></script>
+    <script src="prepare_cards.js"></script>
+    <script src="filter_by_kind.js"></script>
+    <script src="form_script.js"></script>
+    <script src="combo_validation.js"></script>
+    <script src="dishes_data.js"></script>
+    <script src="order_validation.js"></script>
+    <script src="dishes_display.js"></script>
+    <script src="form_script.js"></script>
+    <script src="storage.js"></script>

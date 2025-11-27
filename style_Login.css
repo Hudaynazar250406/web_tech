@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Фоновое фото ресторана */
+    background-size: cover; /* Фото покрывает весь фон */
+    background-position: center; /* Центрирование */
+    background-repeat: no-repeat; /* Без повторений */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #333; /* Тёмный текст для контраста */
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачная белая форма */
+    padding: 40px;
+    border-radius: 12px; /* Более мягкие углы для стиля ресторана */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Мягкая тень */
+    width: 300px;
+    text-align: center; /* Центрирование текста */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #8B4513; /* Коричневый оттенок для ресторанной темы (как дерево/вино) */
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left; /* Выравнивание лейблов слева */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Скруглённые края */
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #8B4513; /* Коричневый для ресторанной атмосферы */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Плавный hover */
+}
+
+button:hover {
+    background-color: #A0522D; /* Светлее при наведении */
+}
